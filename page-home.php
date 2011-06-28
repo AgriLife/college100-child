@@ -23,53 +23,22 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-<?php endwhile; ?>
-		
-<div id="home-middle-bg">
-	<div id="home-middle">
-		
+<?php endwhile; ?>	
+		<div id="home-middle">
 		<div class="home-middle-features">
-	
+		
 			<?php $my_query = new WP_Query('showposts=3');
-			echo '<div id="featured-home-middle">'; 
 			$count = 0;
 	  		while ($my_query->have_posts()) : $my_query->the_post();
 	  		$do_not_duplicate[] = $post->ID; $count++;
 	  		global $post;
 	  		?>
-	            <div class="featured-wrap" id="featured-wrapper-<?php echo $count;?>">
-				<div class="featured-home-middle-detail">
-					<h3 class="entry-title"><a href="<?php the_permalink();?>"><?php echo get_the_title(); ?></a></h3>
-					<p><a href="<?php the_permalink();?>"><?php the_post_thumbnail('HomeWidget');?></a><?php the_excerpt();?></p>
-					<p class="featured-home-middle-meta">
-						<span class="read-more"><a href="<?php the_permalink();?>">Read Article &rarr;</a></span>
-					</p>
-				</div>
-			</div><!-- end .featured-wrapper -->
+	        <div class="featured-wrap" id="featured-wrapper-<?php echo $count;?>">
+			<h3 class="entry-title"><a href="<?php the_permalink();?>"><?php echo get_the_title(); ?></a></h3>
+			<p><a href="<?php the_permalink();?>"><?php the_date('m/d', '<span class="date">', '</span>'); ?><?php the_post_thumbnail('HomeWidget');?></a></p><?php the_excerpt();?>
+			</div><!-- end .featured-wrap -->
 			<?php endwhile;  wp_reset_query; ?>	
-		</div><!-- end #featured-home-middle -->
-			
-			<div class="feature">
-			<h3 class="entry-title"><a href="http://aglifesciences.tamu.edu/news/2011/02/24/rootsandshoots/">Roots and Shoots: The College Grows</a></h3>
-			<p><a href="http://aglifesciences.tamu.edu/news/2011/02/24/rootsandshoots/"><img src='http://agrilife.org/college-test/files/2011/05/dino.jpg' alt="student studying science Texas a&amp;m"></a>
-			In the first few decades of the 20th century, Texas A&amp;M expanded both upward and outward. As enrollment increased and funding became available, the directors initiated a building program that would continue throughout the 1920s and 1930s. They also formed new departments and expanded the college system by adding branches in other parts of the state.
-			<span class="read-more"><a href="http://aglifesciences.tamu.edu/news/2011/02/24/rootsandshoots/">Read Article &rarr;</a></span></p>
-			</div><!-- end .feature -->	
-						
-			<div class="feature">
-			<h3 class="entry-title"><a href="http://aglifesciences.tamu.edu/news/2011/04/21/the-golden-age-of-science/">The Golden Age of Science</a></h3>
-			<p><a href="http://aglifesciences.tamu.edu/news/2011/04/21/the-golden-age-of-science/"><img class='science-img' src='http://agrilife.org/college-test/files/2011/05/1959studentlab_21-300x241.jpg' alt="student studying science Texas a&amp;m"></a>
-			During the 1950s, a quiet technological and social revolution was taking place across the United States. Chartered in 1950 by the U.S. Congress, the National Science Foundation reflected the public’s interest in scientific research. The foundation’s mission was to set scientific policy and encourage basic research through grants. Dollars for research flowed in, and a new generation of scientists attracted to public research joined the professional ranks at agricultural experiment stations nationwide. Employment increased by 50 percent in less than a decade.
-			<span class="read-more"><a href="http://aglifesciences.tamu.edu/news/2011/04/21/the-golden-age-of-science/">Read Article &rarr;</a></span></p>
-			</div><!-- end .feature -->	
-			
-			<div class="feature">
-			<h3 class="entry-title"><a href="http://aglifesciences.tamu.edu/news/2011/05/05/the-times-they-are-a-changin’/">The Times, They are a-Changin’</a></h3>
-			<p><a href="http://aglifesciences.tamu.edu/news/2011/05/05/the-times-they-are-a-changin’/"><img src='http://agrilife.org/college-test/files/2011/05/girls-alt.jpg' alt="student studying science Texas a&amp;m"></a>
-			Released in 1964, singer-songwriter Bob Dylan’s third studio album, The Times They Are a-Changin’, captured the spirit of social and political upheaval characteristic of the era. And at Texas A&amp;M University and the College of Agriculture, the times were also changing. In 1961, the Department of Soil and Crop Sciences is formed in the School of Agriculture.
-			<span class="read-more"><a href="http://aglifesciences.tamu.edu/news/2011/05/05/the-times-they-are-a-changin’/">Read Article &rarr;</a></span></p>
-			</div><!-- end .feature -->	
-											
+													
 		</div><!-- end .home-features -->		
 			
 		<div class="home-middle-1">
@@ -80,10 +49,7 @@ get_header(); ?>
 			</div>		
 			<?php endif; ?>
 		</div><!-- end .home-middle-1 -->
-
-    </div><!-- end #home-middle -->
-</div><!-- end #home-middle-bg -->
-			
+		</div><!-- end #home-middle -->				
 			</div><!-- #content -->
 
 <?php get_sidebar(); ?>

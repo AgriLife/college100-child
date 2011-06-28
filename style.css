@@ -63,18 +63,8 @@ span.gigpress-sidebar-status a, .btn a:active, button.btn:active, a.gigpress-tic
 -------------------------------------------------------------- */
 
 #extension-section-nav {
-	position: absolute;
-	overflow: hidden;
-	z-index: 3;		
-	top: 0;
-	left: 0;
-	width: 100%;
 	background: #5b0125;
-	color: #fff;
-	border-bottom: 1px dashed #5b0125;
-	-webkit-box-shadow: 0 1px 5px rgba(6,6,6,.3);
-	-moz-box-shadow: -6px 1px 5px rgba(6,6,6,.3);
-	box-shadow: 0 1px 5px rgba(6,6,6,.3);	
+	border-bottom: 1px dashed #5b0125;	
 }
 
 body.admin-bar #extension-section-nav {	
@@ -310,6 +300,12 @@ body.admin-bar #extension-section-nav {
 	background: url(images/home.png) no-repeat left top;
 }
 
+/***** Header ********************/
+
+#site-title a {
+	color: #5d0025;
+}
+
 /***** Home Middle ********************/
 
 
@@ -341,24 +337,42 @@ body.home #content p {
 	margin-left: 10px;
 	}
 
-body.home p span.big {
-	font-size: 1.2em;
-	line-height: 1.3em;
+body.home .page p:first-child {
 	text-shadow: 0 1px 0 #fff;		
 }
 
-#home-middle .home-middle-features .feature {
-	margin-bottom: 1em;
-	padding-bottom: 1em;
+#home-middle .home-middle-features .featured-wrap {
+	position: relative;
+}
+
+#home-middle .home-middle-features a {
+	border: none;
+}
+
+#home-middle .home-middle-features a .date {
+	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;	
+	font-size: .8em;
+	background: #5d0025;
+	color: #fff;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;		
+	padding: 2px 5px 1px;
+	-webkit-box-shadow: 0 0 4px #fff;
+	-moz-box-shadow: 0 0 4px #fff;	
+	box-shadow: 0 0 4px #fff;
+	position: absolute;
+	left: 5px;
+	top: 97px;	
+	z-index: 999;
+	margin: 1px;
 }
 
 #home-middle .home-middle-features img {
 	width: 175px;
 	float: left;
-	padding: 5px 1.2em 1.2em 0;
-	opacity: .9;	
+	margin: 5px 1.2em 1.2em 0;
+	opacity: .9;
 }
-
 
 #home-middle .home-middle-features img:hover {
 	opacity: 1;
@@ -398,7 +412,7 @@ body.home span.read-more a {
 	box-shadow: 0 1px 2px #dad1ad;
 	border: none;
 	float: left;
-	margin: 10px 0 5px 2px;
+	margin: 20px 0 30px 2px;
 	}
 
 body.home span.read-more a:hover {
@@ -605,7 +619,7 @@ body.home span.read-more a:hover {
 	
 	#site-title a {
 		background: url(images/100-tab-logo.png) no-repeat left 15px;		
-		font: 2em "arno-pro-1","arno-pro-2", 'Cambria', georgia, serif;
+		font: 2em arno-pro-1,arno-pro-2, 'Cambria', georgia, serif;
 		padding: 20px 0 20px 115px;	
 		color: #5d0025;
 	}
@@ -751,7 +765,7 @@ body.home span.read-more a:hover {
 @media all and (max-width: 640px) {
 		
 	#site-title a {
-		font: 1.1em 'arno pro', georgia, serif;
+		font: 1.1em arno-pro-1,arno-pro-2, georgia, serif;
 		margin-left: 7px;
 	}
 	body { 

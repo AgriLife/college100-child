@@ -29,6 +29,25 @@ get_header(); ?>
 	<div id="home-middle">
 		
 		<div class="home-middle-features">
+	
+			<?php $my_query = new WP_Query('showposts=3');
+			echo '<div id="featured-home-middle">'; 
+			$count = 0;
+	  		while ($my_query->have_posts()) : $my_query->the_post();
+	  		$do_not_duplicate[] = $post->ID; $count++;
+	  		global $post;
+	  		?>
+	            <div class="featured-wrap" id="featured-wrapper-<?php echo $count;?>">
+				<div class="featured-home-middle-detail">
+					<h3 class="entry-title"><a href="<?php the_permalink();?>"><?php echo get_the_title(); ?></a></h3>
+					<p><a href="<?php the_permalink();?>"><?php the_post_thumbnail('HomeWidget');?></a><?php the_excerpt();?></p>
+					<p class="featured-home-middle-meta">
+						<span class="read-more"><a href="<?php the_permalink();?>">Read Article &rarr;</a></span>
+					</p>
+				</div>
+			</div><!-- end .featured-wrapper -->
+			<?php endwhile;  wp_reset_query; ?>	
+		</div><!-- end #featured-home-middle -->
 			
 			<div class="feature">
 			<h3 class="entry-title"><a href="http://aglifesciences.tamu.edu/news/2011/02/24/rootsandshoots/">Roots and Shoots: The College Grows</a></h3>
